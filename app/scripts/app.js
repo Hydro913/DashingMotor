@@ -30,10 +30,6 @@ angular
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       })
-      .when('/dash', {
-        templateUrl: 'views/dash.html',
-        controller: 'DashCtrl'
-      })
       .when('/dash/sin', {
         templateUrl: 'views/dash/sin.html',
         controller: 'DashSinCtrl'
