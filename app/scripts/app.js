@@ -18,9 +18,12 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
+    'mgcrea.ngStrap',
     'nvd3'
   ])
-  .config(function ($routeProvider) {
+  .config(['$routeProvider','$logProvider',function ($routeProvider, $logProvider) {
+    $logProvider.debugEnabled(true);
+
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -41,4 +44,4 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  });
+  }]);

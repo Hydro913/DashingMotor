@@ -8,12 +8,18 @@
  * Controller of the dashingMotorApp
  */
 angular.module('dashingMotorApp')
-  .controller('DashSinCtrl', function ($scope) {
+  .controller('DashSinCtrl', ['$scope', '$log', function ($scope, $log) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
+
+    $scope.isActive = function (viewLocation) {
+      $log.log('DashFftCtrl ' + $location.path());
+      return viewLocation === $location.path();
+    };
+
     $scope.options = {
       chart: {
         type: 'lineChart',
@@ -100,4 +106,4 @@ angular.module('dashingMotorApp')
         }
       ];
     };
-  });
+  }]);
