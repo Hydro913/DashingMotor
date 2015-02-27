@@ -43,7 +43,7 @@ angular.module('dashingMotorApp')
           axisLabel: 'Time (ms)'
         },
         yAxis: {
-          axisLabel: 'Voltage (v)',
+          axisLabel: 'Current (A)',
           tickFormat: function(d){
             return d3.format('.02f')(d);
           },
@@ -96,12 +96,12 @@ angular.module('dashingMotorApp')
       return [
         {
           values: sin,      //values - represents the array of {x,y} data points
-          key: 'Sine Wave', //key  - the name of the series.
+          key: 'Ideal Current', //key  - the name of the series.
           color: '#ff7f0e'  //color - optional: choose your own line color.
         },
         {
           values: sin2,
-          key: 'Another sine wave',
+          key: 'Actual Current',
           color: '#7777ff'
         }
       ];

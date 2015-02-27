@@ -25,7 +25,7 @@ angular
     $logProvider.debugEnabled(true);
 
     $routeProvider
-      .when('/', {
+      .when('/home', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
@@ -42,6 +42,6 @@ angular
         controller: 'DashFftCtrl'
       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/home'
       });
   }]);

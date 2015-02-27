@@ -17,11 +17,6 @@ angular.module('dashingMotorApp')
 
     $scope.$log = $log;
 
-    $scope.isActive = function (viewLocation) {
-      this.$log.log('DashFftCtrl ' + $location.path());
-      return viewLocation === $location.path();
-    };
-
     $scope.options = {
       chart: {
         type: 'lineChart',
@@ -42,10 +37,10 @@ angular.module('dashingMotorApp')
           tooltipHide: function(e){ console.log("tooltipHide"); }
         },
         xAxis: {
-          axisLabel: 'Time (ms)'
+          axisLabel: 'Frequency (Hz)'
         },
         yAxis: {
-          axisLabel: 'Voltage (v)',
+          axisLabel: 'Decibel (dB)',
           tickFormat: function(d){
             return d3.format('.02f')(d);
           },
@@ -101,7 +96,7 @@ angular.module('dashingMotorApp')
       return [
         {
           values: fft,      //values - represents the array of {x,y} data points
-          key: 'Sine Wave', //key  - the name of the series.
+          key: 'Normalized Frequency', //key  - the name of the series.
           color: '#ff7f0e'  //color - optional: choose your own line color.
         }
       ];
